@@ -10,7 +10,7 @@ class UserScan extends React.Component {
 
   onIdSubmit = (id, empId) => {
     this.setState({ teamId: id });
-    this.setState({ empId: empId})
+    this.setState({ empId: empId });
     this.setState({ currentPage: "scan" });
   };
 
@@ -31,7 +31,7 @@ class UserScan extends React.Component {
       return (
         <div>
           <Bar />
-          <Scan teamId={this.state.teamId} onUploadClick={this.onUploadClick} />
+          <Scan onUploadClick={this.onUploadClick} />
         </div>
       );
     } else if (this.state.currentPage === "finished") {
