@@ -6,10 +6,11 @@ import Finished from "./Finished";
 import Bar from "./Bar";
 
 class UserScan extends React.Component {
-  state = { teamId: "", video: null, currentPage: "login" };
+  state = { teamId: "", empId: "", video: null, currentPage: "login" };
 
-  onIdSubmit = (id) => {
+  onIdSubmit = (id, empId) => {
     this.setState({ teamId: id });
+    this.setState({ empId: empId})
     this.setState({ currentPage: "scan" });
   };
 

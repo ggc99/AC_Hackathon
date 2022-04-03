@@ -5,18 +5,24 @@ import thermaLogo from "./assets/poweredByThe.svg";
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { team: "", emp: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEmpChange = this.handleEmpChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ team: event.target.value });
   }
+
+  handleEmpChange(event) {
+    this.setState({ emp: event.target.value });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
 
-    this.props.onIdSubmit(this.state.value);
+    this.props.onIdSubmit(this.state.team, this.state.emp);
   }
 
   render() {
@@ -79,7 +85,7 @@ class Login extends React.Component {
                   <input
                     type="text"
                     value={this.state.value}
-                    onChange={this.handleChange}
+                    onChange={this.handleEmpChange}
                     placeholder="Enter your employee id"
                     style={{
                       marginBottom: "8px",
